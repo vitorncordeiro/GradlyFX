@@ -1,9 +1,20 @@
 package br.pucpr.gradly.model;
+import java.io.Serializable;
 
-public abstract class Usuario {
+public abstract class Usuario implements Serializable{
+    private static final long serialVersionUID = 1L;
+    private int id;
     private String nome;
     private String email;
     private String senha;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
