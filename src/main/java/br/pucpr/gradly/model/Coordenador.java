@@ -1,6 +1,4 @@
-package br.pucpr.gradly.dao;
-
-import br.pucpr.gradly.model.Usuario;
+package br.pucpr.gradly.model;
 
 public class Coordenador extends Usuario {
     private String departamento;
