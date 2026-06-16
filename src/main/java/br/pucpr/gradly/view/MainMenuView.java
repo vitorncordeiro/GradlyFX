@@ -5,6 +5,7 @@ import br.pucpr.gradly.view.referencia.ReferenciaListView;
 import br.pucpr.gradly.view.tarefa.TarefaFormView;
 import br.pucpr.gradly.view.tarefa.TarefaListView;
 import br.pucpr.gradly.view.orientador.OrientadorListView;
+import br.pucpr.gradly.view.coordenador.CoordenadorListView;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -22,6 +23,11 @@ public class MainMenuView extends Application {
         Button btnOrientador = new Button("Gerenciar Orientador");
         btnOrientador.setOnAction(e -> {
             new OrientadorListView().mostrar();
+        });
+
+        Button btnCoordenador = new Button("Gerenciar Coordenador");
+        btnCoordenador.setOnAction(e -> {
+            new CoordenadorListView().mostrar();
         });
 
         Button btnTarefa =
@@ -64,10 +70,12 @@ public class MainMenuView extends Application {
         btnReferencia.setPrefWidth(200);
         btnListReferencia.setPrefWidth(200);
         btnOrientador.setPrefWidth(200);
+        btnCoordenador.setPrefWidth(200);
 
         root.getChildren().addAll(
                 title,
                 btnOrientador,
+                btnCoordenador,
                 btnTarefa,
                 btnListTarefa,
                 btnReferencia,
