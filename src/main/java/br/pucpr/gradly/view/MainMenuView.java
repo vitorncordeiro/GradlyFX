@@ -4,6 +4,7 @@ import br.pucpr.gradly.view.referencia.ReferenciaFormView;
 import br.pucpr.gradly.view.referencia.ReferenciaListView;
 import br.pucpr.gradly.view.tarefa.TarefaFormView;
 import br.pucpr.gradly.view.tarefa.TarefaListView;
+import br.pucpr.gradly.view.orientador.OrientadorListView;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -17,6 +18,11 @@ public class MainMenuView extends Application {
 
     @Override
     public void start(Stage stage) {
+
+        Button btnOrientador = new Button("Gerenciar Orientador");
+        btnOrientador.setOnAction(e -> {
+            new OrientadorListView().mostrar();
+        });
 
         Button btnTarefa =
                 new Button("Cadastrar Tarefa");
@@ -45,6 +51,8 @@ public class MainMenuView extends Application {
         btnListReferencia.setOnAction(e -> {
             new ReferenciaListView().mostrar();
         });
+
+
         Label title = new Label("Gradly Menu");
         title.setFont(new Font("Arial",24));
         title.setAlignment(Pos.CENTER);
@@ -55,9 +63,11 @@ public class MainMenuView extends Application {
         btnListTarefa.setPrefWidth(200);
         btnReferencia.setPrefWidth(200);
         btnListReferencia.setPrefWidth(200);
+        btnOrientador.setPrefWidth(200);
 
         root.getChildren().addAll(
                 title,
+                btnOrientador,
                 btnTarefa,
                 btnListTarefa,
                 btnReferencia,
