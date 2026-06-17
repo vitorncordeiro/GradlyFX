@@ -71,6 +71,7 @@ public class AlunoCreateView {
             dao.inserir(aluno);
 
             new AlunoListView().mostrar();
+            stage.close();
         });
 
         voltar.setOnAction(e -> {
