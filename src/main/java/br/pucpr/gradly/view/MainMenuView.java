@@ -8,6 +8,7 @@ import br.pucpr.gradly.view.tarefa.TarefaFormView;
 import br.pucpr.gradly.view.tarefa.TarefaListView;
 import br.pucpr.gradly.view.orientador.OrientadorListView;
 import br.pucpr.gradly.view.coordenador.CoordenadorListView;
+import br.pucpr.gradly.view.projeto.ProjetoListView;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -31,6 +32,12 @@ public class MainMenuView extends Application {
         Button btnCoordenador = new Button("Gerenciar Coordenador");
         btnCoordenador.setOnAction(e -> {
             new CoordenadorListView().mostrar();
+            stage.close();
+        });
+
+        Button btnProjeto = new Button("Gerenciar Projeto");
+        btnProjeto.setOnAction(e -> {
+            new ProjetoListView().mostrar();
             stage.close();
         });
 
@@ -68,12 +75,14 @@ public class MainMenuView extends Application {
         btnAluno.setPrefWidth(200);
         btnOrientador.setPrefWidth(200);
         btnCoordenador.setPrefWidth(200);
+        btnProjeto.setPrefWidth(200);
         btnGrupo.setPrefWidth(200);
 
         root.getChildren().addAll(
                 title,
                 btnOrientador,
                 btnCoordenador,
+                btnProjeto,
                 btnTarefa,
                 btnReferencia,
                 btnAluno,
@@ -81,7 +90,7 @@ public class MainMenuView extends Application {
         );
 
         Scene scene =
-                new Scene(root, 400, 300);
+                new Scene(root, 400, 350);
 
         stage.setTitle("Gradly");
         stage.setScene(scene);
