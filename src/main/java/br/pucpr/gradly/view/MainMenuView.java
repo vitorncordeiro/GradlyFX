@@ -1,5 +1,6 @@
 package br.pucpr.gradly.view;
 
+import br.pucpr.gradly.view.aluno.AlunoListView;
 import br.pucpr.gradly.view.referencia.ReferenciaFormView;
 import br.pucpr.gradly.view.referencia.ReferenciaListView;
 import br.pucpr.gradly.view.tarefa.TarefaFormView;
@@ -58,6 +59,10 @@ public class MainMenuView extends Application {
             new ReferenciaListView().mostrar();
         });
 
+        Button btnAluno = new Button("Alunos");
+        btnAluno.setOnAction(e -> {
+            new AlunoListView().mostrar();
+        });
 
         Label title = new Label("Gradly Menu");
         title.setFont(new Font("Arial",24));
@@ -69,6 +74,7 @@ public class MainMenuView extends Application {
         btnListTarefa.setPrefWidth(200);
         btnReferencia.setPrefWidth(200);
         btnListReferencia.setPrefWidth(200);
+        btnAluno.setPrefWidth(200);
         btnOrientador.setPrefWidth(200);
         btnCoordenador.setPrefWidth(200);
 
@@ -79,7 +85,8 @@ public class MainMenuView extends Application {
                 btnTarefa,
                 btnListTarefa,
                 btnReferencia,
-                btnListReferencia
+                btnListReferencia,
+                btnAluno
         );
 
         Scene scene =
