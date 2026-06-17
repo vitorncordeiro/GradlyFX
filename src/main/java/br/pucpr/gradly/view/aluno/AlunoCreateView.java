@@ -73,7 +73,10 @@ public class AlunoCreateView {
             new AlunoListView().mostrar();
         });
 
-        voltar.setOnAction(e -> new AlunoListView().mostrar());
+        voltar.setOnAction(e -> {
+            new AlunoListView().mostrar();
+            stage.close();
+        });
 
         HBox botoes = new HBox(10, salvar, voltar);
 

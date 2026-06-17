@@ -2,6 +2,7 @@ package br.pucpr.gradly.view.aluno;
 
 import br.pucpr.gradly.dao.AlunoDAO;
 import br.pucpr.gradly.model.Aluno;
+import br.pucpr.gradly.view.MainMenuView;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -25,6 +26,11 @@ public class AlunoListView {
         Label titulo = new Label("Lista de Alunos");
 
         Button btnNovo = new Button("Novo Aluno");
+        Button btnMenu = new Button("Voltar Inicio");
+        btnMenu.setOnAction(e->{
+            stage.close();
+            new MainMenuView().start(new Stage());
+        });
 
         btnNovo.setOnAction(e -> new AlunoCreateView(stage).mostrar());
 
@@ -102,7 +108,7 @@ public class AlunoListView {
 
         carregarTabela(tabela, dao);
 
-        root.getChildren().addAll(titulo, btnNovo, tabela);
+        root.getChildren().addAll(titulo, btnMenu, btnNovo, tabela);
 
         stage.setTitle("Lista de Alunos");
         stage.setScene(new Scene(root, 900, 500));

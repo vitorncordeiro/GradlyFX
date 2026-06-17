@@ -24,44 +24,43 @@ public class MainMenuView extends Application {
         Button btnOrientador = new Button("Gerenciar Orientador");
         btnOrientador.setOnAction(e -> {
             new OrientadorListView().mostrar();
+            stage.close();
         });
 
         Button btnCoordenador = new Button("Gerenciar Coordenador");
         btnCoordenador.setOnAction(e -> {
             new CoordenadorListView().mostrar();
+            stage.close();
         });
 
-        Button btnTarefa =
-                new Button("Cadastrar Tarefa");
-
+        Button btnTarefa = new Button("Cadastrar Tarefa");
         btnTarefa.setOnAction(e -> {
             new TarefaFormView().mostrar();
+            stage.close();
         });
 
-        Button btnReferencia =
-                new Button("Cadastrar Referencia");
-
+        Button btnReferencia = new Button("Cadastrar Referencia");
         btnReferencia.setOnAction(e -> {
             new ReferenciaFormView().mostrar();
+            stage.close();
         });
 
-        Button btnListTarefa =
-                new Button("Listar Tarefa");
-
+        Button btnListTarefa = new Button("Listar Tarefa");
         btnListTarefa.setOnAction(e -> {
             new TarefaListView().mostrar();
+            stage.close();
         });
 
-        Button btnListReferencia =
-                new Button("Listar Referencia");
-
+        Button btnListReferencia = new Button("Listar Referencia");
         btnListReferencia.setOnAction(e -> {
             new ReferenciaListView().mostrar();
+            stage.close();
         });
 
         Button btnAluno = new Button("Alunos");
         btnAluno.setOnAction(e -> {
             new AlunoListView().mostrar();
+            stage.close();
         });
 
         Label title = new Label("Gradly Menu");

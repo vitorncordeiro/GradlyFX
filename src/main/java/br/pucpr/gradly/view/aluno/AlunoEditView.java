@@ -89,7 +89,7 @@ public class AlunoEditView {
             new AlunoListView().mostrar();
         });
 
-        voltar.setOnAction(e -> new AlunoListView().mostrar());
+        voltar.setOnAction(e -> {new AlunoListView().mostrar(); stage.close();});
 
         HBox botoes = new HBox(10, atualizar, voltar);
 
