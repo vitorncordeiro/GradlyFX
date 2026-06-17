@@ -1,6 +1,8 @@
 package br.pucpr.gradly.view;
 
+import br.pucpr.gradly.view.administrador.AdministradorListView;
 import br.pucpr.gradly.view.aluno.AlunoListView;
+import br.pucpr.gradly.view.banca.BancaListView;
 import br.pucpr.gradly.view.grupos.GrupoListView;
 import br.pucpr.gradly.view.referencia.ReferenciaFormView;
 import br.pucpr.gradly.view.referencia.ReferenciaListView;
@@ -33,6 +35,18 @@ public class MainMenuView extends Application {
         Button btnCoordenador = new Button("Gerenciar Coordenador");
         btnCoordenador.setOnAction(e -> {
             new CoordenadorListView().mostrar();
+            stage.close();
+        });
+
+        Button btnAdministrador = new Button("Gerenciar Administrador");
+        btnAdministrador.setOnAction(e -> {
+            new AdministradorListView().mostrar();
+            stage.close();
+        });
+
+        Button btnBanca = new Button("Gerenciar Banca");
+        btnBanca.setOnAction(e -> {
+            new BancaListView().mostrar();
             stage.close();
         });
 
@@ -82,6 +96,8 @@ public class MainMenuView extends Application {
         btnAluno.setPrefWidth(200);
         btnOrientador.setPrefWidth(200);
         btnCoordenador.setPrefWidth(200);
+        btnAdministrador.setPrefWidth(200);
+        btnBanca.setPrefWidth(200);
         btnProjeto.setPrefWidth(200);
         btnInstituicao.setPrefWidth(200);
         btnGrupo.setPrefWidth(200);
@@ -91,6 +107,8 @@ public class MainMenuView extends Application {
                 btnOrientador,
                 btnCoordenador,
                 btnProjeto,
+                btnBanca,
+                btnAdministrador,
                 btnInstituicao,
                 btnTarefa,
                 btnReferencia,
