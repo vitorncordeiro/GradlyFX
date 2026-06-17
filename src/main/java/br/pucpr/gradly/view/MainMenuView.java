@@ -62,24 +62,24 @@ public class MainMenuView extends Application {
             stage.close();
         });
 
-        Button btnTarefa = new Button("Cadastrar Tarefa");
+        Button btnTarefa = new Button("Gerenciar Tarefa");
         btnTarefa.setOnAction(e -> {
             new TarefaListView().mostrar();
             stage.close();
         });
 
-        Button btnReferencia = new Button("Cadastrar Referencia");
+        Button btnReferencia = new Button("Gerenciar Referencia");
         btnReferencia.setOnAction(e -> {
             new ReferenciaListView().mostrar();
             stage.close();
         });
 
-        Button btnAluno = new Button("Alunos");
+        Button btnAluno = new Button("Gerenciar Alunos");
         btnAluno.setOnAction(e -> {
             new AlunoListView().mostrar();
             stage.close();
         });
-        Button btnGrupo = new Button("Grupo");
+        Button btnGrupo = new Button("Gerenciar Grupo");
         btnGrupo.setOnAction(e -> {
             new GrupoListView().mostrar();
             stage.close();
