@@ -87,6 +87,7 @@ public class AlunoEditView {
             dao.atualizar(atualizado);
 
             new AlunoListView().mostrar();
+            stage.close();
         });
 
         voltar.setOnAction(e -> {new AlunoListView().mostrar(); stage.close();});
