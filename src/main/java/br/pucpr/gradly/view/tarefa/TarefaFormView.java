@@ -2,9 +2,11 @@ package br.pucpr.gradly.view.tarefa;
 
 import br.pucpr.gradly.dao.TarefaDAO;
 import br.pucpr.gradly.model.Tarefa;
+import br.pucpr.gradly.view.MainMenuView;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class TarefaFormView {
@@ -42,6 +44,12 @@ public class TarefaFormView {
         DatePicker dpFim = new DatePicker();
 
         Button btnSalvar = new Button("Salvar");
+
+        Button btnCancelar = new Button("Cancelar");
+
+        btnCancelar.setOnAction(e -> {
+            stage.close();
+        });
 
         // Se estiver editando, preenche os campos
         if (tarefa != null) {
@@ -133,7 +141,12 @@ public class TarefaFormView {
         root.add(lblFim, 0, 3);
         root.add(dpFim, 1, 3);
 
-        root.add(btnSalvar, 1, 4);
+        HBox botoesBox = new HBox(
+                10,
+                btnSalvar, btnCancelar
+        );
+
+        root.add(botoesBox, 1, 5);
 
         Scene scene = new Scene(root, 400, 250);
 

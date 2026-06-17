@@ -35,24 +35,12 @@ public class MainMenuView extends Application {
 
         Button btnTarefa = new Button("Cadastrar Tarefa");
         btnTarefa.setOnAction(e -> {
-            new TarefaFormView().mostrar();
+            new TarefaListView().mostrar();
             stage.close();
         });
 
         Button btnReferencia = new Button("Cadastrar Referencia");
         btnReferencia.setOnAction(e -> {
-            new ReferenciaFormView().mostrar();
-            stage.close();
-        });
-
-        Button btnListTarefa = new Button("Listar Tarefa");
-        btnListTarefa.setOnAction(e -> {
-            new TarefaListView().mostrar();
-            stage.close();
-        });
-
-        Button btnListReferencia = new Button("Listar Referencia");
-        btnListReferencia.setOnAction(e -> {
             new ReferenciaListView().mostrar();
             stage.close();
         });
@@ -70,9 +58,7 @@ public class MainMenuView extends Application {
         root.setAlignment(Pos.CENTER);
 
         btnTarefa.setPrefWidth(200);
-        btnListTarefa.setPrefWidth(200);
         btnReferencia.setPrefWidth(200);
-        btnListReferencia.setPrefWidth(200);
         btnAluno.setPrefWidth(200);
         btnOrientador.setPrefWidth(200);
         btnCoordenador.setPrefWidth(200);
@@ -82,9 +68,7 @@ public class MainMenuView extends Application {
                 btnOrientador,
                 btnCoordenador,
                 btnTarefa,
-                btnListTarefa,
                 btnReferencia,
-                btnListReferencia,
                 btnAluno
         );
 

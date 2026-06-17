@@ -5,6 +5,7 @@ import br.pucpr.gradly.model.Referencia;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class ReferenciaFormView {
@@ -42,6 +43,13 @@ public class ReferenciaFormView {
         );
 
         Button btnSalvar = new Button("Salvar");
+
+        Button btnCancelar = new Button("Cancelar");
+
+        btnCancelar.setOnAction(e -> {
+            stage.close();
+        });
+
 
         // Se estiver editando, preenche os campos
         if (referencia != null) {
@@ -133,7 +141,12 @@ public class ReferenciaFormView {
         root.add(lblTipo, 0, 1);
         root.add(cbTipo, 1, 1);
 
-        root.add(btnSalvar, 1, 4);
+        HBox botoesBox = new HBox(
+                10,
+                btnSalvar, btnCancelar
+        );
+
+        root.add(botoesBox, 1, 5);
 
         Scene scene = new Scene(root, 400, 250);
 

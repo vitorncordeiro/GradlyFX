@@ -2,6 +2,7 @@ package br.pucpr.gradly.view.tarefa;
 
 import br.pucpr.gradly.dao.TarefaDAO;
 import br.pucpr.gradly.model.Tarefa;
+import br.pucpr.gradly.view.MainMenuView;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -142,16 +143,31 @@ public class TarefaListView {
             );
         });
 
+        Button btnAdicionar = new Button("Adicionar");
+
+        btnAdicionar.setOnAction(e -> {
+            new TarefaFormView().mostrar();
+        });
+
+        Button btnVoltar = new Button("Voltar");
+
+        btnVoltar.setOnAction(e -> {
+            stage.close();
+            new MainMenuView().start(new Stage());
+        });
+
         HBox filtroBox = new HBox(
                 10,
                 cbEstado,
-                btnFiltrar
+                btnFiltrar,
+                btnAdicionar
         );
 
         HBox botoesBox = new HBox(
                 10,
                 btnEditar,
-                btnExcluir
+                btnExcluir,
+                btnVoltar
         );
 
         VBox root = new VBox(
