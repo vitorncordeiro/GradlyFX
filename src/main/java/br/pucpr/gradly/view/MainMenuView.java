@@ -1,5 +1,7 @@
 package br.pucpr.gradly.view;
 
+import br.pucpr.gradly.view.comentario.ComentarioView;
+import br.pucpr.gradly.view.documento.DocumentoView;
 import br.pucpr.gradly.view.administrador.AdministradorListView;
 import br.pucpr.gradly.view.aluno.AlunoListView;
 import br.pucpr.gradly.view.banca.BancaListView;
@@ -85,6 +87,18 @@ public class MainMenuView extends Application {
             stage.close();
         });
 
+        Button btnDocumento = new Button("Gerenciar Documentos");
+        btnDocumento.setOnAction(e -> {
+            new DocumentoView().mostrar();
+            stage.close();
+        });
+
+        Button btnComentario = new Button("Gerenciar Comentários");
+        btnComentario.setOnAction(e -> {
+            new ComentarioView().mostrar();
+            stage.close();
+        });
+
         Label title = new Label("Gradly Menu");
         title.setFont(new Font("Arial",24));
         title.setAlignment(Pos.CENTER);
@@ -101,6 +115,8 @@ public class MainMenuView extends Application {
         btnProjeto.setPrefWidth(200);
         btnInstituicao.setPrefWidth(200);
         btnGrupo.setPrefWidth(200);
+        btnDocumento.setPrefWidth(200);
+        btnComentario.setPrefWidth(200);
 
         root.getChildren().addAll(
                 title,
@@ -113,11 +129,13 @@ public class MainMenuView extends Application {
                 btnTarefa,
                 btnReferencia,
                 btnAluno,
-                btnGrupo
+                btnGrupo,
+                btnDocumento,
+                btnComentario
         );
 
         Scene scene =
-                new Scene(root, 400, 400);
+                new Scene(root, 400, 480);
 
         stage.setTitle("Gradly");
         stage.setScene(scene);
