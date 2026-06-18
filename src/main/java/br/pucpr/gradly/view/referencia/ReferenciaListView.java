@@ -3,7 +3,7 @@ package br.pucpr.gradly.view.referencia;
 import br.pucpr.gradly.dao.ReferenciaDAO;
 import br.pucpr.gradly.model.Referencia;
 import br.pucpr.gradly.view.MainMenuView;
-import br.pucpr.gradly.view.tarefa.TarefaFormView;
+import br.pucpr.gradly.view.referencia.ReferenciaFormView;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -155,7 +155,7 @@ public class ReferenciaListView {
         Button btnAdicionar = new Button("Adicionar");
 
         btnAdicionar.setOnAction(e -> {
-            new TarefaFormView().mostrar();
+            new ReferenciaFormView().mostrar();
         });
 
         Button btnVoltar = new Button("Voltar");
